@@ -30,13 +30,15 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 let fuelSecondary = function (a) {
   if (checkFuel(a) === 'green') {
     let stolen = a - 100001;
-    // console.log(`Secretly stealing ${stolen} of fuel`)
+    console.log(`Secretly stealing ${stolen} of fuel`)
+    // a = a - stolen;
     return stolen; 
   } else if (checkFuel(a) === 'yellow') {
     return a - 50001;
   } else {
     return a; 
   }
+
 };
 // console.log(fuelLevel);
 // fuelLevel = fuelLevel - (fuelSecondary(fuelLevel));
@@ -70,19 +72,21 @@ let cargoSecondary = function(array) {
 //b). You need to swipe two items from the cargo hold. Choose well. Stealing water ain’t gonna get us rich. Put the swag into a new array and return it from the function.
 
 //c). The cargo hold has better security than the fuel tanks. It counts how many things are in storage. You need to replace what you steal with something worthless. The count MUST stay the same, or you’ll get caught and thrown into the LaunchCode brig.
-
+console.log(fuelLevel)
 //d). Don’t get hasty, matey! Remember to test your function.
 
 // Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
 let irs = function(levelOfFuel, itemsInCargo) {
   let arr = cargoSecondary(itemsInCargo);
-  return `Raided ${fuelSecondary(fuelLevel)} kg of fuel from the tanks, and secretly stole a ${arr[0]} and ${arr[1]} while replacing with ${itemsInCargo[itemsInCargo.indexOf('coal')]} and ${itemsInCargo[itemsInCargo.indexOf('wood')]}`
+  // fuelLevel = fuelLevel - fuelSecondary(fuelLevel)
+  return /*`Raided ${fuelSecondary(fuelLevel)} kg of fuel from the tanks, and */`secretly stole a ${arr[0]} and ${arr[1]} while replacing with ${itemsInCargo[itemsInCargo.indexOf('coal')]} and ${itemsInCargo[itemsInCargo.indexOf('wood')]}`
  }
- console.log(irs(fuelLevel, cargoHold))
+fuelLevel = fuelLevel - fuelSecondary(fuelLevel);
+console.log(irs(fuelLevel, cargoHold));
 
- console.log("Fuel level: " + checkFuel(fuelLevel));
- console.log("Hold status: " + holdStatus(cargoHold));
-
+console.log("Fuel level: " + checkFuel(fuelLevel));
+console.log("Hold status: " + holdStatus(cargoHold));
+console.log(fuelLevel);
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
@@ -159,3 +163,6 @@ let irs = function(levelOfFuel, itemsInCargo) {
 
 // let i = 17;
 // console.log(console.log(addTen(i), i) === console.log(`27 17`));
+
+// console.log("false" == false)
+// console.log(true == false)
