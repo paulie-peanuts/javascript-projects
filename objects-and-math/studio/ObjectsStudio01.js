@@ -80,11 +80,11 @@ console.log(goingToSpace);
 let candidateNames = [];
 for (let i=0; i <animals.length; i++) {
   if (goingToSpace.includes(animals[i].astronautID)) {
-    candidateNames.push(animals[i].name)
+    candidateNames.push(animals[i])
   }
 }
 // console.log(candidateNames);
-console.log(`${candidateNames[0]}, ${candidateNames[1]}, and ${candidateNames[2]} are going to space!`)
+console.log(`${candidateNames[0].name}, ${candidateNames[1].name}, and ${candidateNames[2].name} are going to space!`)
 //   for (let i=0; i < animals.length; i++)
 //     if (idNumbers.includes(animals[i].astronautID)) {
 //       goingToSpace.push(animals[i]);
