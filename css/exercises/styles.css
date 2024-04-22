@@ -1,1 +1,10 @@
 /* Start adding your styling below! */ 
+.pink-paragraph {
+    color: pink;
+}
+.center {
+    text-align:center
+}
+#list-color {
+    color: blueviolet;
+}
