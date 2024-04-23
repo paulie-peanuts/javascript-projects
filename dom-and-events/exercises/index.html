@@ -10,5 +10,12 @@
         <p id="statusReport">The shuttle is on the ground</p>
         <button id = "liftoffButton">Take off</button>
         <button id = "abortMission">Abort mission</button>
+        <script>
+            let paragraph = document.getElementById("statusReport")
+            let button = document.getElementById("liftoffButton");
+            button.addEventListener('click', event => {
+            paragraph.innerHTML = 'Houston! We have liftoff!';
+            });
+        </script>
     </body>
 </html>
